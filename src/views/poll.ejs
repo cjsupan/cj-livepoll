@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <title>Poll</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/mypoll.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                <a class="navbar-brand" href="/">LivePoll</a>
+        </nav>
+        <div id="link">
+                <p id='genlink'></p>
+                <a id='copy' href=''>Copy Link URL</a>
+
+        </div><br>
+        
+        <div id="main">
+                <div id='question'>
+                        <p>Question</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#45af58" id="refresh" class="bi bi-arrow-repeat" viewBox="0 0 16 16" >
+                                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                        </svg>
+                </div>
+                <form id='form' action='/result' method='POST'>
+                        
+                        <div id='option'>
+                                <input type="text" id="form-question" class="form-control" name="question" placeholder="Type your question here.." >
+                                <input type="text" class="form-control form-option" name="option1" placeholder="Option 1">
+                                <input type="text" class="form-control form-option" name="option2" placeholder="Option 2">
+                                <input type="text" class="form-control form-option" name="option3" placeholder="Option 3">
+                                <input type="text" class="form-control form-option" name="option4" placeholder="Option 4">
+                        </div>
+                                <button type="button" id="add" class="btn">+ Add an Option</button>
+                                <input type="submit" id="submit" class="btn form-control" value='Start collecting responses and share result'> 
+                </form>
+               
+        </div>
+     </div>
+    
+</body>
+</html>

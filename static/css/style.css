@@ -1,0 +1,246 @@
+body{
+    background-color: #3c4147;
+    margin: 0px;
+    padding: 0px; 
+}
+.container-fluid{
+     margin: 0px;
+     padding: 0px;
+}
+
+.navbar{
+    height: 60px;
+}
+
+.navbar .navbar-brand{
+    color: #eee;
+}
+
+#body .display-4{
+    font-size: 40px;
+    padding-top: 10%; 
+    text-align: center;
+    margin: 0px;
+    color: #fff;
+}
+
+#body .lead{
+    text-align: center;
+    color: #eee;
+    margin: 0px;
+}
+
+#start{
+    margin: 5% 0px 0px 45%;
+}
+
+#start span{
+    color: #fff;
+    background-color: transparent;
+}
+
+#link{
+    width: 40%;
+    height: 35px;
+    display: inline-block;
+    margin: 5% 0px 0px 30%;
+    background-color: #343a40;
+}
+
+#link #genlink{
+    font-size: 20px;
+    width: 70%;
+    height: 35px;
+    background-color: white; 
+    display: inline-block;
+}
+
+#link a{
+    text-decoration: none;
+    margin-left: 15px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+}
+
+#main{
+    width: 40%;
+    margin: 5% 0px 60px 30%;
+    padding-bottom: 20px;
+    display: inline-block;
+    background-color: #2c343d;
+}
+
+#main #question{
+    border-bottom: 2px solid #4a5057;
+}
+
+#main #question p{
+    font-size: 20px;
+    color: #eee;
+    margin: 10px;
+    display: inline-block;
+}
+
+#main #question svg{
+    margin-left: 70%;
+    display: inline-block;
+}
+
+#main form input{
+    width: 90%;
+    margin: 10px 5%;
+    color: #eee;
+    background-color: #292e33;
+    border: 0px;
+}
+
+#main form #add{
+    width: 90%;
+    margin: 5px 5%;
+    text-align: left;
+    display: inline-block;
+    background-color: #292e33;
+    color: #45af58;
+}
+
+#main form #submit{
+    width: 90%;
+    margin: 10px 5%;
+    text-align: center;
+    display: inline-block;
+    background-color: #292e33;
+    color: #eee;
+}
+
+#answer-body{
+    text-align: center;
+    margin-top: 5%;
+}
+
+#answer-body .display-4{
+    font-size: 40px;
+    color: #fff;
+}
+
+#answer-body .lead{
+    color: #eee;
+}
+
+#answer-main{
+    width: 45%;
+    margin: 5% 0px 60px 28%;
+    padding-bottom: 20px;
+    display: inline-block;
+    background-color: #2c343d;
+    border-radius: 10px;
+}
+
+#answer-main p{
+    font-size: 20px;
+    color: lightgray;
+    margin: 10px;
+}
+
+#answer-main p span{
+    font-size: 20px;
+    color: gray;
+}
+
+#answer-main #poll-body{
+    width: 96%;
+    margin: 0px 2%;
+    background-color: #292e33;
+    border-radius: 10px;
+}
+
+#answer-main #poll-body #poll-question{
+    display: inline-block;
+    margin: 10px;
+}
+
+#answer-main #poll-body #poll-form{
+    width: 100%;
+    margin: 10px 10px;
+    display: inline-block;
+}
+
+#answer-main #poll-body #poll-form .option{
+    width: 95%;
+    display: inline-block;
+    margin: 3px 10px;
+}
+
+#answer-main #poll-body #poll-form label{
+    font-size: 20px;
+    color: #eee;
+    margin-left: 5px; 
+}
+
+#answer-main #poll-body #poll-form #vote{
+    width: 100px;
+    height: 30px;
+    margin: 20px 0px 0px 0px;
+    border-radius: 5px;
+    border: 0px;
+    color: #eee; 
+    background-color: #45af58;
+
+}
+
+#result-body .display-4{
+    text-align: center;
+    margin-top: 3%;
+    color: #eee;
+}
+
+#results{
+    width: 45%;
+    margin: 10px 0px 0px 28%;
+    display: inline-block;
+    background-color: #2c343d;
+    border-radius: 10px;
+}
+
+#results #results-question{
+    font-size: 30px;
+    color: #eee;
+    margin: 10px;
+}
+
+#results #options{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#results #results-option{
+    font-size: 20px;
+    color: #fff;
+    margin: 0px 0px 0px 20px;
+}
+
+#results #results-vote{
+    font-size: 15px;
+    color: gray;
+    margin: 0px 0px 10px 20px;
+}
+
+#results #create{
+    margin: 10px 0px 10px 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #45af58;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    color: #eee;
+}
+
+#showresult-body{
+    width: 45%;
+    height: 200px;
+    margin: 5% 0px 0px 28%;
+    display: inline-block;
+    background-color: #2c343d;
+    border-radius: 10px;
+}
