@@ -23,34 +23,14 @@ app.use(router);
 
 var OpenPolls = [];
 
-function random(id){
-    let number = Math.floor(1000 + Math.random()*999);
-    if(number != id){
-        return number;
-    }
-
-}
-
 io.on('connection', function (socket) {
+    
+    socket.on('poll', function(data){
 
-    socket.on('poll', function(){
-        let Url_Id = random();
-        if(OpenPolls.length > 0){
-            for(var i = 0; i < OpenPolls.length; i++){
-                if(Url_Id == OpenPolls[i].socketId){
-                    Url_Id = random(OpenPolls[i].socketId);
-                }
-            }
-            OpenPolls.push({id:Url_Id, socket_id:socket.id, vote: 0});
-            socket.join(Url_Id);
-            socket.emit('Poll_id', Url_Id);
-
-        }else{
-
-            OpenPolls.push({id:Url_Id, socket_id:socket.id, vote: 0});
-            socket.join(Url_Id);
-            socket.emit('Poll_Id', Url_Id);
-        }
+        let Url_Id = data.id;
+        OpenPolls.push({id: Url_Id, socket_id: socket.id, voted: 0, joined: 0});
+        socket.join(Url_Id);
+        socket.emit('Poll_Id', {id: Url_Id});
     });
 
     socket.on('Poll_details', function(data){
@@ -66,9 +46,17 @@ io.on('connection', function (socket) {
     });
 
     socket.on('Join', function(data){
+
         let id = data;
         socket.join(id);
+        
         for(let i = 0 ; i < OpenPolls.length; i++){
+            if(OpenPolls[i].id == id){
+                OpenPolls[i].joined += 1;
+
+            }
+            socket.emit('userJoined', OpenPolls[i].joined);
+
             if(OpenPolls[i].id == data && (OpenPolls[i].question || OpenPolls[i].PollOptions)){
                 socket.emit('question', OpenPolls[i]);
             }
@@ -76,19 +64,21 @@ io.on('connection', function (socket) {
     });
 
     socket.on('results', function(data){
+
         socket.join(data);
         for(let i = 0; i < OpenPolls.length; i++){
             if(OpenPolls[i].id == data){
+               
                 socket.emit('showResult', OpenPolls[i]);
             }
         }
     });
 
     socket.on('poll-vote', function(data){
-        console.log(data.votedOption);
+        
         for(let i = 0; i < OpenPolls.length; i++){
             if(OpenPolls[i].id == data.id){
-                OpenPolls[i].vote += 1;
+                OpenPolls[i].voted += 1;
 
                 for(let j in OpenPolls[i].options){
                     if(OpenPolls[i].options[j].option == data.votedOption){

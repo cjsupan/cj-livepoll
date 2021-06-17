@@ -12,6 +12,7 @@
     <script src="js/mypoll.js"></script>
 </head>
 <body>
+        
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
                 <a class="navbar-brand" href="/">LivePoll</a>
@@ -34,13 +35,17 @@
                         
                         <div id='option'>
                                 <input type="text" id="form-question" class="form-control" name="question" placeholder="Type your question here.." >
-                                <input type="text" class="form-control form-option" name="option1" placeholder="Option 1">
-                                <input type="text" class="form-control form-option" name="option2" placeholder="Option 2">
-                                <input type="text" class="form-control form-option" name="option3" placeholder="Option 3">
-                                <input type="text" class="form-control form-option" name="option4" placeholder="Option 4">
+                                
                         </div>
+                        <div id='hidden'>
+                                 <input type='hidden' id='link_id' action='hidden' name='id' value='<%= id %>'>
+                        </div>
+                               
                                 <button type="button" id="add" class="btn">+ Add an Option</button>
+                        <div id='form-submit'>
                                 <input type="submit" id="submit" class="btn form-control" value='Start collecting responses and share result'> 
+                        </div>
+                                
                 </form>
                
         </div>

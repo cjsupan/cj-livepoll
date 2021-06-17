@@ -5,7 +5,7 @@ $(document).ready(function(){
     
     socket.emit('results', id);
     socket.on('showResult', function(data){
-        console.log(data);
+
         let question = data.question.charAt(0).toUpperCase() + data.question.slice(1);
         document.getElementById('results-question').innerHTML = ""+question+"";
 

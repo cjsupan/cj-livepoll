@@ -67,6 +67,7 @@ body{
     width: 40%;
     margin: 5% 0px 60px 30%;
     padding-bottom: 20px;
+    border-radius: 10px;
     display: inline-block;
     background-color: #2c343d;
 }
@@ -87,12 +88,23 @@ body{
     display: inline-block;
 }
 
-#main form input{
+#main form #form-question{
     width: 90%;
+    height: 40px;
     margin: 10px 5%;
     color: #eee;
     background-color: #292e33;
     border: 0px;
+}
+
+#main form .form-option{
+    width: 90%;
+    height: 40px;
+    margin: 5px 5%;
+    color: #eee;
+    background-color: #292e33;
+    border: 0px;
+    border-radius: 5px;
 }
 
 #main form #add{
@@ -104,12 +116,18 @@ body{
     color: #45af58;
 }
 
+#main form #form-submit{
+    width: 100%;
+    margin-top: 10px; 
+    border-top: 2px solid #4a5057;
+}
+
 #main form #submit{
     width: 90%;
-    margin: 10px 5%;
+    margin: 15px 5% 10px 5%;
     text-align: center;
     display: inline-block;
-    background-color: #292e33;
+    background-color: #45af58;
     color: #eee;
 }
 

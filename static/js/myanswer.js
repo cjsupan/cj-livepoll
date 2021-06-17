@@ -19,7 +19,7 @@ $(document).ready(function(){
             options += '</div>';
            
         }
-        console.log(id);
+        
         options += '<input type="hidden" action="hidden" name="id" value='+id+'>';
         options += '<input type="submit" id="vote" value="Vote">';
         document.getElementById('poll-form').innerHTML = options;
