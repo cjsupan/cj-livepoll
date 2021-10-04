@@ -10,12 +10,12 @@ $(document).ready(function(){
 
         let options = "";
         for(let i=0; i < data.options.length; i++){
-            let percent = (Math.round((data.options[i].vote / data.joined * 100) * 100) / 100);
+            let percent = (Math.round(((data.options[i].vote / data.joined) * 100) * 100) / 100);
             if(data.joined == 0){
                 percent = 0;
             }
             options += "<p id='results-option' class='lead'>"+data.options[i].option+"</p>";
-            options += "<p id='results-vote' class='lead'>"+data.options[i].vote+" / "+percent+"</p>";
+            options += "<p id='results-vote' class='lead'>"+data.options[i].vote+" / "+percent+"%</p>";
           
         }
         document.getElementById('options').innerHTML = options;

@@ -82,7 +82,7 @@ io.on('connection', function (socket) {
 
                 for(let j in OpenPolls[i].options){
                     if(OpenPolls[i].options[j].option == data.votedOption){
-                        OpenPolls[i].options[j].vote += 1;
+                        OpenPolls[i].options[j].vote++;
                     }
                 }
             }
